@@ -1,11 +1,11 @@
-package introduction.loops2;
+package introduction;
 
 import java.util.Scanner;
 
 /**
  * Created by amit on 11-Jul-2020
  */
-public class Solution {
+public class Loops2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();

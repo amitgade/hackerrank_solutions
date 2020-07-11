@@ -1,11 +1,11 @@
-package introduction.endoffile;
+package introduction;
 
 import java.util.Scanner;
 
 /**
  * Created by amit on 11-Jul-2020
  */
-public class Solution {
+public class EndOfFile {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int i = 1;
