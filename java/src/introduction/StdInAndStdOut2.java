@@ -7,12 +7,12 @@ import java.util.Scanner;
  */
 public class StdInAndStdOut2 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        double d = scan.nextDouble();
-        scan.nextLine();
-        String s = scan.nextLine();
-        scan.close();
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        double d = sc.nextDouble();
+        sc.nextLine();
+        String s = sc.nextLine();
+        sc.close();
         System.out.println("String: " + s);
         System.out.println("Double: " + d);
         System.out.println("Int: " + i);
