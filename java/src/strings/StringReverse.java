@@ -11,6 +11,7 @@ public class StringReverse {
         /* If a String is equivalent to itself when reversed, it's a palindrome */
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
+        sc.close();
         /* Enter your code here. Print output to STDOUT. */
 
         if(A.equals(new StringBuilder(A).reverse().toString())){
