@@ -9,14 +9,14 @@ public class StringReverse {
     public static void main(String[] args) {
 
         /* If a String is equivalent to itself when reversed, it's a palindrome */
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
+        Scanner sc = new Scanner(System.in);
+        String A = sc.next();
         sc.close();
         /* Enter your code here. Print output to STDOUT. */
 
-        if(A.equals(new StringBuilder(A).reverse().toString())){
+        if (A.equals(new StringBuilder(A).reverse().toString())) {
             System.out.println("Yes");
-        }else{
+        } else {
             System.out.println("No");
         }
     }

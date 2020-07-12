@@ -13,6 +13,6 @@ public class SubString {
         int end = in.nextInt();
         in.close();
 
-        System.out.println(S.substring(start,end));
+        System.out.println(S.substring(start, end));
     }
 }
