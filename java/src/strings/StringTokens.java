@@ -14,7 +14,7 @@ public class StringTokens {
         // Write your code here.
 
         s = removeLeadingNonLetters(s);
-        
+
         /* Check special cases */
         if (s.length() == 0) {
             System.out.println(0);
