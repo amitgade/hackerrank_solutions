@@ -21,6 +21,7 @@ public class Regex3 {
                 System.out.println("Invalid");
             }
         }
+        scan.close();
     }
 }
 
