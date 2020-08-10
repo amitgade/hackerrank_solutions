@@ -37,5 +37,6 @@ public class JavaArrayList {
                 System.out.println("ERROR!");
             }
         }
+        scan.close();
     }
 }
