@@ -59,16 +59,16 @@ public class JavaPriorityQueue {
         /**
          * Java 8
          **/
-        PriorityQueue<JavaPriorityQueue.Student> data = new PriorityQueue(Comparator
-                .comparing(JavaPriorityQueue.Student::getCGPA)
-                .reversed()
-                .thenComparing(JavaPriorityQueue.Student::getName)
-                .thenComparing(JavaPriorityQueue.Student::getID));
+//        PriorityQueue<JavaPriorityQueue.Student> data = new PriorityQueue(Comparator
+//                .comparing(JavaPriorityQueue.Student::getCGPA)
+//                .reversed()
+//                .thenComparing(JavaPriorityQueue.Student::getName)
+//                .thenComparing(JavaPriorityQueue.Student::getID));
 
         /**
          * Java 7
          **/
-        PriorityQueue<Student> data2 = new PriorityQueue<>(new Comparator<Student>() {
+        PriorityQueue<Student> studentsQueue = new PriorityQueue<>(1000, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
                 if (o1.getCGPA() < o2.getCGPA()) {
@@ -100,15 +100,19 @@ public class JavaPriorityQueue {
                     double cgpa = Double.parseDouble(instruction[2]);
                     int id = Integer.parseInt(instruction[3]);
                     Student s = new Student(id, name, cgpa);
-                    data.add(s);
-                } else if (task.equals("SERVED") && !data.isEmpty()) {
-                    data.remove();
+                    studentsQueue.add(s);
+                } else if (task.equals("SERVED") && !studentsQueue.isEmpty()) {
+                    studentsQueue.remove();
                 }
             }
 
             List<Student> students = new ArrayList<>();
-            for (Student student : data) {
-                students.add(student);
+            Student first = this.studentsQueue.poll();
+            if (first != null) {
+                while (first != null) {
+                    students.add(first);
+                    first = this.studentsQueue.poll();
+                }
             }
             return students;
         }
