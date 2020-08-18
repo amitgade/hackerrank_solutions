@@ -12,8 +12,6 @@ public class JavaMethodOverriding {
         System.out.println(c2.getName());
         c2.getNumberOfTeamMembers();
     }
-
-
 }
 
 class Sports {
