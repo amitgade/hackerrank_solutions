@@ -19,6 +19,8 @@ public class JavaTryCatch {
             System.out.println(ae.toString());
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            in.close();
         }
     }
 }

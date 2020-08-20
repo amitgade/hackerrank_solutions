@@ -24,6 +24,9 @@ public class JavaIterator {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
+
+        sc.close();
+
         for(int i = 0;i<n;i++){
             mylist.add(sc.nextInt());
         }
