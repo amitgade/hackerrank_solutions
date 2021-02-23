@@ -1,0 +1,108 @@
+package linkedlist.delete_node;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ * Created by amitgade on 23-Feb-2021
+ */
+public class Main {
+    static class SinglyLinkedListNode {
+        public int data;
+        public SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int nodeData) {
+            this.data = nodeData;
+            this.next = null;
+        }
+    }
+
+    static class SinglyLinkedList {
+        public SinglyLinkedListNode head;
+        public SinglyLinkedListNode tail;
+
+        public SinglyLinkedList() {
+            this.head = null;
+            this.tail = null;
+        }
+
+        public void insertNode(int nodeData) {
+            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
+
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                this.tail.next = node;
+            }
+
+            this.tail = node;
+        }
+    }
+
+    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
+        while (node != null) {
+            bufferedWriter.write(String.valueOf(node.data));
+
+            node = node.next;
+
+            if (node != null) {
+                bufferedWriter.write(sep);
+            }
+        }
+    }
+
+    // TODO: 23/02/21 : Solution Code Starts
+    static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
+        if (head != null) {
+            int currentNodePosition = 0;
+            SinglyLinkedListNode currentNode = head;
+            if (currentNodePosition == position) {
+                head = currentNode.next;
+                return head;
+            }
+            while (currentNode.next != null) {
+                if (currentNodePosition + 1 == position) {
+                    currentNode.next = currentNode.next.next;
+                    return head;
+                }
+                currentNode = currentNode.next;
+                currentNodePosition++;
+            }
+        }
+        return head;
+    }
+    // TODO: 23/02/21 : Solution Code Ends
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        SinglyLinkedList llist = new SinglyLinkedList();
+
+        int llistCount = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < llistCount; i++) {
+            int llistItem = scanner.nextInt();
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+            llist.insertNode(llistItem);
+        }
+
+        int position = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        SinglyLinkedListNode llist1 = deleteNode(llist.head, position);
+
+        printSinglyLinkedList(llist1, " ", bufferedWriter);
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+
+}
