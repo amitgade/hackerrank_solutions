@@ -34,6 +34,7 @@ class Result {
      *  1. STRING s
      *  2. LONG_INTEGER n
      */
+    // TODO: 24/02/22 solution starts 
     public static long repeatedString(String s, long n) {
         long quotient = n / s.length();
         long remainder = n % s.length();
@@ -49,4 +50,6 @@ class Result {
         }
         return occurrenceOfA;
     }
+
+    // TODO: 24/02/22 solution ends 
 }
