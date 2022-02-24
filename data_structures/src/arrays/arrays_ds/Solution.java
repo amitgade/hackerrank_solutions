@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by amit on 21-Jul-2020
  */
-public class Main {
+public class Solution {
     // Complete the reverseArray function below.
     static int[] reverseArray(int[] a) {
         int[] a_reverse = new int[a.length];

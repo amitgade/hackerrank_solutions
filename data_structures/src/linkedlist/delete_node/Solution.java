@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by amitgade on 23-Feb-2021
  */
-public class Main {
+public class Solution {
     static class SinglyLinkedListNode {
         public int data;
         public SinglyLinkedListNode next;
